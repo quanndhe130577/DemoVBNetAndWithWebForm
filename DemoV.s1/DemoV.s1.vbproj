@@ -73,6 +73,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
@@ -152,6 +154,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <None Include="Connected Services\ClinicServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\ClinicServiceReference\configuration.svcinfo" />
+    <Content Include="Connected Services\ClinicServiceReference\DemoV.s1.ClinicServiceReference.Clinic.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ClinicServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Connected Services\PatientServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\PatientServiceReference\configuration.svcinfo" />
+    <Content Include="Connected Services\PatientServiceReference\DemoV.s1.PatientServiceReference.Patient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\PatientServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -182,6 +202,26 @@
     <Content Include="Datasets\DataSetDemo.xsc">
       <DependentUpon>DataSetDemo.xsd</DependentUpon>
     </Content>
+    <None Include="Connected Services\ClinicServiceReference\service.wsdl" />
+    <None Include="Connected Services\ClinicServiceReference\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ClinicServiceReference\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ClinicServiceReference\VBNetWCFDemo.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PatientServiceReference\service.wsdl" />
+    <None Include="Connected Services\PatientServiceReference\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PatientServiceReference\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PatientServiceReference\VBNetWCFDemo.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Datasets\DataSetDemo.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -246,6 +286,16 @@
     <Compile Include="About.aspx.vb">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Connected Services\ClinicServiceReference\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\PatientServiceReference\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.designer.vb">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -421,6 +471,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ClinicServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\PatientServiceReference\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
